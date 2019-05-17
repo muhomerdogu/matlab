@@ -1,0 +1,49 @@
+okul.db veritabanının üç tablosu bulunmaktadır.
+
+ogrenciler tablosunda
+	id
+	ogr_no
+	ogr_ad
+	ogr_soyad
+	ogr_cinsiyet
+
+dersler tablosunda
+	id
+	ders_adi
+	ders_kodu
+
+notlar tablosunda
+	id
+	ders_id
+	ogrenci_id
+	ara
+	final
+	harf
+
+sütunları bulunmaktadır.
+
+Bazı SQL komutları hakkında açıklamalar.
+
+1- Veri Çekmek ıçin :
+	select * from ogrenciler
+
+2- Öğrenci isminde göre artan veri çekmek için
+	select * from ogrenciler order by ogr_ad asc
+
+3- Öğrenci isminde göre azalan veri çekmek için
+	select * from ogrenciler order by ogr_ad desc
+
+4- Öğrenci soy isminde göre artan ilk iki satırı çekmek için
+	select * from ogrenciler order by ogr_soyad asc limit 2
+
+5- Id degeri 1 olan öğrencinin ismini değiştirmek için 
+	update ogrenci set ogr_ad = 'Mehmet' where id = 1
+
+6- iki farklı tablodan aynı anda veri çekmek için
+	select * from ogrenciler, notlar    (bu şekilde ilgili öğrenci ve notu eşleşmez)
+
+7- iki farklı tablodan aynı anda veri çekerken ilgili id ler için eşleşme yapmak için
+	select * from ogrenciler, notlar where ogrenciler.id = notlar.ogrenci_id
+
+kullanılabilir.
+	
