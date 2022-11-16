@@ -1,0 +1,11 @@
+clc
+clear all
+img=(imread('od.jpg'));
+imshow(img)
+%img2=unint8(img)
+w=ones(3,3)/9;
+%w(2,2)=1
+img2=uint8(imfilter(img,w));
+%imwrite(img2,'deneme.png','png');
+figure
+imshow(img2)
