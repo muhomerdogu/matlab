@@ -9,6 +9,6 @@ for i=1:m-p
         img(i,j)=median(w(:));
     end
 end
-img2=uint8(img2);
-imshow(img2);
-imwrite(img2,'omer.png','png');
+img2=uint16(img2)
+imshow(img2)
+imwrite(img2,'omera.png','png')
